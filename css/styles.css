@@ -87,16 +87,20 @@ header {
     width: 100%;
     order: 1;
     flex: 0 0 10vh;
+    align-self: center;
 }
 
 .main {
     width: 100%;
     order: 2;
     flex: 1 1 80vh;
+    align-self: center;
 }
 
 footer {
     width: 100%;
     order: 3;
     flex: 0 0 10vh;
+    align-self: center;
+    background: rgba(0,0,0,.05);
 }
