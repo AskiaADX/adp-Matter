@@ -71,7 +71,7 @@ body {
 header.large {
     width: 100%;
     order: 1;
-    flex: 0 0 10vh;
+    flex: 0 0 100px;
     align-self: center;
     background: #FFF;
     color: #283B49;
@@ -86,6 +86,7 @@ header.large {
 header.fixed {
     position: fixed;
     top: 0;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14)
 }
 
 header h2 {
@@ -352,7 +353,7 @@ input[type=checkbox]:not(:checked):after {
 footer {
     width: 100%;
     order: 4;
-    flex: 0 0 10vh;
+    flex: 0 0 100px;
     align-self: center;
     background: #283B49;
     display: flex;
