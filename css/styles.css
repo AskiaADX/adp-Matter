@@ -189,12 +189,15 @@ label {
     transition: color linear .17s;
 }
 
+label:hover {
+    color: #DF4335;
+}
+
 input[type=checkbox] {
     width: 1em;
     height: 1em;
     font-family: inherit;
     font-size: 2rem;
-    cursor: pointer;
     vertical-align: middle;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -226,7 +229,7 @@ input[type=checkbox]:checked {
     transition: transform .3s cubic-bezier(.2, .3, 0, 1), box-shadow .3s cubic-bezier(.2, .3, 0, 1), border-color 0s;
 }
 
-input[type=checkbox]:checked+label {
+input[type=checkbox]:checked~label {
     color: #DF4335;
 }
 
@@ -314,7 +317,7 @@ input[type=checkbox]:not(:checked):after {
     position: relative;
     padding: 1em 2em;
     border: none;
-    color: #EEE;
+    color: #FAFAFA;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     background-color: #DF4335;
     -webkit-background-clip: padding-box;
@@ -347,4 +350,27 @@ footer {
     flex: 0 0 10vh;
     align-self: center;
     background: #283B49;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+footer a {
+    color: #FAFAFA;
+    transition: color linear .3s;
+}
+
+.footerLeft {
+    order: 1;
+    flex: 0 0 auto;
+    padding: 0 0 0 1em;
+}
+
+.footerRight {
+    order: 2;
+    flex: 0 0 auto;
+    padding: 0 1em 0 0;
 }
