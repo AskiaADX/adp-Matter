@@ -68,7 +68,7 @@ body {
 
 
 /* HEADER & RIBBON */
-header {
+header.large {
     width: 100%;
     order: 1;
     flex: 0 0 10vh;
@@ -81,6 +81,11 @@ header {
     justify-content: space-between;
     align-items: stretch;
     align-content: center;
+}
+
+header.fixed {
+    position: fixed;
+    top: 0;
 }
 
 header h2 {
