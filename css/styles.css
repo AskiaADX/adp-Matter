@@ -86,7 +86,8 @@ header.large {
 header.fixed {
     position: fixed;
     top: 0;
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14)
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14);
+    z-index: 1;
 }
 
 header h2 {
