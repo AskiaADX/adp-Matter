@@ -1,4 +1,5 @@
 /* GLOBALS */
+
 @font-face {
     font-family: "MaxWeb W03 Bold";
     src: url("../fonts/1473505/3b6337cb-ced4-4f27-ba0c-67b550af684c.eot?#iefix");
@@ -66,8 +67,25 @@ body {
     color: #FFF;
 }
 
+::-webkit-input-placeholder {
+    color: #AAA;
+    font-family: "MaxWeb W03 Regular", sans-serif;
+}
+::-moz-placeholder {
+    color: #AAA;
+    font-family: "MaxWeb W03 Regular", sans-serif;
+}
+:-ms-input-placeholder {
+    color: #AAA;
+    font-family: "MaxWeb W03 Regular", sans-serif;
+}
+:-moz-placeholder {
+    color: #AAA;
+    font-family: "MaxWeb W03 Regular", sans-serif;
+}
 
 /* HEADER & RIBBON */
+
 header.large {
     width: 100%;
     order: 1;
@@ -117,7 +135,9 @@ header.fixed h2 {
     flex-shrink: 0;
 }
 
+
 /* PROGRESS BAR */
+
 .progressWrapper {
     order: 2;
     flex: 0 0 auto;
@@ -130,11 +150,11 @@ header.fixed .progressWrapper {
 }
 
 .progress {
-  background-color: #e5e9eb;
-  height: .8em;
-  position: relative;
-  width: 14em;
-  border-radius: .115em;
+    background-color: #e5e9eb;
+    height: .8em;
+    position: relative;
+    width: 14em;
+    border-radius: .115em;
 }
 
 .progress-bar {
@@ -145,7 +165,9 @@ header.fixed .progressWrapper {
     border-radius: .115em 0 0 .115em;
 }
 
+
 /* MAIN QUESTION CONTAINER */
+
 .main {
     width: 100%;
     order: 3;
@@ -157,6 +179,7 @@ header.fixed .progressWrapper {
 
 
 /* QUESTION CAPTION */
+
 .question {
     background: #FFF;
     border-radius: .115em;
@@ -184,6 +207,7 @@ header.fixed .progressWrapper {
     font-family: "MaxWeb W03 Italic";
     margin-top: 2em;
 }
+
 
 /* RESPONSES */
 
@@ -306,7 +330,9 @@ input[type=checkbox]:not(:checked):after {
     border: .1em solid #DF4335;
 }
 
+
 /* NAVIGATION */
+
 .navigation {
     text-align: center;
 }
@@ -407,7 +433,9 @@ input[type=checkbox]:not(:checked):after {
     outline: 0;
 }
 
+
 /* FOOTER */
+
 footer {
     width: 100%;
     order: 4;
