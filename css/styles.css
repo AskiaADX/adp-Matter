@@ -274,6 +274,14 @@ input[type=checkbox]:not(:checked):after {
     }
 }
 
+.responses textarea {
+    outline: none;
+    resize: vertical;
+    width: 100%;
+    border-radius: .125em;
+    border: .1em solid #CCC;
+}
+
 /* NAVIGATION */
 .navigation {
     text-align: center;
@@ -360,6 +368,15 @@ input[type=checkbox]:not(:checked):after {
 .secondary {
     background-color: #DDD;
     color: #666;
+}
+
+.secondary.disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.secondary.disabled:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 *:focus {
