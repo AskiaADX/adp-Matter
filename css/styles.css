@@ -317,16 +317,14 @@ input[type=checkbox]:not(:checked):after {
     }
 }
 
-.btn-primary {
+.btn {
     font-family: "MaxWeb W03 Bold";
     font-size: 1.3rem;
     cursor: pointer;
     position: relative;
     padding: 1em 2em;
     border: none;
-    color: #FAFAFA;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    background-color: #DF4335;
     -webkit-background-clip: padding-box;
     -moz-background-clip: padding;
     border-radius: .115em;
@@ -336,14 +334,32 @@ input[type=checkbox]:not(:checked):after {
     transition: all .3s cubic-bezier(0.25, 0.1, 0.25, 0.1);
 }
 
-.btn-primary:hover {
-    color: #FFF;
-    background-color: #d53c2f;
+.btn:hover {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-.btn-primary:active {
+.btn:active {
     transform: scale(0.98);
+}
+
+.primary {
+    background-color: #DF4335;
+    color: #FAFAFA;
+}
+
+.primary:hover {
+    color: #FFF;
+    background-color: #d53c2f;
+}
+
+.secondary {
+    background-color: #ecf0f1;
+    color: #888;
+}
+
+.secondary {
+    background-color: #DDD;
+    color: #666;
 }
 
 *:focus {
