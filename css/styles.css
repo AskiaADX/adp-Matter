@@ -72,6 +72,7 @@ header.large {
     width: 100%;
     order: 1;
     flex: 0 0 100px;
+    height: 100px;
     align-self: center;
     background: #FFF;
     color: #283B49;
@@ -81,6 +82,7 @@ header.large {
     justify-content: space-between;
     align-items: stretch;
     align-content: center;
+    transition: height ease-in .3s, box-shadow ease-in .3s;
 }
 
 header.fixed {
@@ -88,6 +90,7 @@ header.fixed {
     top: 0;
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14);
     z-index: 1;
+    height: 70px;
 }
 
 header h2 {
@@ -96,6 +99,11 @@ header h2 {
     font-family: "MaxWeb W03 Bold", sans-serif;
     order: 1;
     flex: 0 0 auto;
+    transition: line-height ease-in .3s;
+}
+
+header.fixed h2 {
+    line-height: 1.2;
 }
 
 .ribbon {
@@ -114,6 +122,11 @@ header h2 {
     order: 2;
     flex: 0 0 auto;
     padding: 2.5em 1em 2.5em 0;
+    transition: padding ease-in .3s;
+}
+
+header.fixed .progressWrapper {
+    padding: 1.85em 1em 0 0;
 }
 
 .progress {
@@ -276,10 +289,21 @@ input[type=checkbox]:not(:checked):after {
 
 .responses textarea {
     outline: none;
+    padding: .75em;
     resize: vertical;
     width: 100%;
     border-radius: .125em;
     border: .1em solid #CCC;
+    color: #283B49;
+    transition: border cubic-bezier(.2, .3, 0, 1) .17s;
+}
+
+.responses textarea:hover {
+    border: .1em solid #AAA;
+}
+
+.responses textarea:focus {
+    border: .1em solid #DF4335;
 }
 
 /* NAVIGATION */
