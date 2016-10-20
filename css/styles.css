@@ -243,6 +243,10 @@ label {
     margin-left: .8em;
     vertical-align: middle;
     transition: color linear .17s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 label:hover {
