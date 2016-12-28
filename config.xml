@@ -42,7 +42,7 @@
       </property>
       <property xsi:type="standardProperty" id="survey_name" name="Survey Name" type="string" require="false" visible="true">
         <description><![CDATA[the name of the survey]]></description>
-        <value><![CDATA[Survey Name]]></value>
+        <value></value>
       </property>
       <property xsi:type="standardProperty" id="errors_caption" name="Errors caption" type="string" mode="dynamic" require="false" visible="true">
         <description><![CDATA[Errors caption]]></description>
@@ -95,7 +95,7 @@
     <category id="footer" name="Footer">
       <property xsi:type="standardProperty" id="display_footer" name="Display footer" type="string" mode="dynamic" require="true" visible="true">
         <description><![CDATA[Display footer]]></description>
-        <value><![CDATA[yes]]></value>
+        <value><![CDATA[no]]></value>
         <options>
           <option value="yes" text="Yes" />
           <option value="no" text="No" />
