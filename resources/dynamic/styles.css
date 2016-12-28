@@ -179,14 +179,14 @@ input[type=checkbox], input[type=radio] {
 }
 input[type=text], input[type=number], textarea {
     font-size: {%= ResponseFS %};
-    border: .1em solid rgba({%= NeutralColor %});
+    border: {%= BorderWidth %} solid rgba({%= NeutralColor %});
     padding: {%= VPadding %} {%= HPadding %};
 }
 input[type=text]:focus, input[type=number]:focus, textarea:focus {
-    border: .1em solid rgba({%= SecondaryColor %});
+    border: {%= BorderWidth %} solid rgba({%= SecondaryColor %});
 }
 input[type=text]:hover, input[type=number]:hover, textarea:hover {
-    border: .1em solid rgba({%= NeutralDarkColor %});
+    border: {%= BorderWidth %} solid rgba({%= NeutralDarkColor %});
 }
 
 .navigation {
