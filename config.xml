@@ -79,9 +79,13 @@
           <option value="right" text="Right" />
         </options>
       </property>
-      <property xsi:type="standardProperty" id="display_previous" name="Display previous" type="boolean" require="true" visible="true">
+      <property xsi:type="standardProperty" id="display_previous" name="Display previous" type="string" require="true" visible="true">
         <description><![CDATA[Display previous button]]></description>
-        <value><![CDATA[true]]></value>
+        <value><![CDATA[yes]]></value>
+        <options>
+          <option value="yes" text="Yes" />
+          <option value="no" text="No" />
+        </options>
       </property>
       <property xsi:type="standardProperty" id="previous_caption" name="Previous caption" type="string" mode="dynamic" require="false" visible="true">
         <description><![CDATA[Previous caption]]></description>

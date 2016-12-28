@@ -58,7 +58,7 @@ For errorIndex = 1 To CurrentQuestions.Errors.Count %}
                     <!--- ASKIA QUESTIONS HERE -->
                     <askia-questions />
                     <div class="navigation">
-                        {% If CurrentADP.Var("display_previous") = True Then %}
+                        {% If CurrentADP.Var("display_previous") = "yes" Then %}
                         <input type="submit" name="Previous" class="btn secondary keyframe {%:= classDisabled %}" value="{%= CurrentADP.Var("previous_caption") %}" {%:= attrDisabled %} />
                         {% End If %}
                         <input type="submit" name="Next" class="btn primary keyframe" value="{%= CurrentADP.Var("next_caption") %}" />
