@@ -335,6 +335,7 @@ textarea {
     background-clip: padding-box;
     margin: .4em;
     overflow: hidden;
+    -webkit-appearance: none;
     transition: all .3s cubic-bezier(0.25, 0.1, 0.25, 0.1);
 }
 
