@@ -91,12 +91,6 @@ header h2 {
     transition: line-height ease-in .3s;
     display: inline-block\9;
 }
-@media screen and (max-width: 500px) {
-  header h2 {
-    padding: 0 0 0 0.2em;
-  }
-}
-
 header.fixed h2 {
     line-height: 1.2;
 }
@@ -323,8 +317,6 @@ textarea {
 }
 
 .btn {
-    font-family: Arial, helvetica, sans-serif;
-    font-size: 1.3rem;
     cursor: pointer;
     position: relative;
     width: 5.5em;
@@ -386,11 +378,6 @@ footer {
 @media all and (-ms-high-contrast:none) {
      footer { position: fixed; bottom: 0; height: 50px; } /* IE10 */
      *::-ms-backdrop, footer { position: fixed; bottom: 0; height: 50px; } /* IE11 */
-}
-
-footer a {
-    color: #FAFAFA;
-    transition: color linear .3s;
 }
 
 .footerLeft {
