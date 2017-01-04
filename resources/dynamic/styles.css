@@ -166,9 +166,6 @@ header.fixed .progressWrapper {
     color: #FFF;
     padding: {%= VPadding %} {%= HPadding %};
 }
-input[type=checkbox]:checked~label, input[type=radio]:checked~label, input[type=checkbox]:checked~span, input[type=radio]:checked~span {
-    color: rgba({%= SecondaryColor %});
-}
 
 .askia-caption {
     font-size: {%= NormalFS %};
@@ -183,12 +180,33 @@ input[type=checkbox]:checked~label, input[type=radio]:checked~label, input[type=
     border-radius: {%= BorderRadius %};
     padding: {%= VPadding %} 0;
 }
-
-input[type=checkbox], input[type=radio] {
-    width: {%= radio_checkbox_size %};
-    height: {%= radio_checkbox_size %};
-    vertical-align: middle;
+input[type=checkbox]:checked~label.askia-response-label, input[type=radio]:checked~label.askia-response-label {
+    color: rgba({%= SecondaryColor %});
 }
+input[type=radio] + label.askia-radio,
+input[type=checkbox] + label.askia-radio,
+input[type=checkbox] + label.askia-checkbox {
+    font-size: {%= radio_checkbox_size %};
+    border: {%= BorderWidth %} solid rgba({%= NeutralDarkColor %});
+    box-shadow: inset 0 0 0 0 rgba({%= SecondaryColor %});
+}
+input[type=checkbox]:checked + label.askia-radio,
+input[type=checkbox]:checked + label.askia-checkbox,
+input[type=radio]:checked + label.askia-radio {
+    border-color: rgba({%= SecondaryColor %});
+    box-shadow: inset 0 0 0 .5em rgba({%= SecondaryColor %});
+    transition: transform .3s cubic-bezier(.2, .3, 0, 1), box-shadow .3s cubic-bezier(.2, .3, 0, 1), border-color 0s;
+}
+input[type=checkbox] + label.askia-radio:before,
+input[type=checkbox] + label.askia-checkbox:before,
+input[type=checkbox] + label.askia-radio:after,
+input[type=checkbox] + label.askia-checkbox:after,
+input[type=radio] + label.askia-radio:before,
+input[type=radio] + label.askia-radio:after {
+    top: -{%= BorderWidth %};
+    left: -{%= BorderWidth %};
+}
+
 input[type=text], input[type=number], textarea {
     font-size: {%= NormalFS %};
     border: {%= BorderWidth %} solid rgba({%= NeutralColor %});
