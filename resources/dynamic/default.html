@@ -121,8 +121,6 @@ For errorIndex = 1 To CurrentQuestions.Errors.Count %}
                 document.addEventListener("click", function(event){
                     var el = event.target || event.srcElement;
                     if (el.nodeName === "TD" && el.className.indexOf("askia-response") >= 0) {
-                        console.dir(el);
-                        console.dir(el.lastElementChild.attributes.for.value);
 						document.getElementById(el.lastElementChild.attributes.for.value).click();
                     }
                 });
