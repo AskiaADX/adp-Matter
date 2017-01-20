@@ -58,7 +58,7 @@
       </property>
       <property xsi:type="standardProperty" id="sticky_header" name="Sticky header" type="string" mode="dynamic" require="true" visible="true">
         <description><![CDATA[Sticky header]]></description>
-        <value><![CDATA[yes]]></value>
+        <value><![CDATA[no]]></value>
         <options>
           <option value="yes" text="Yes" />
           <option value="no" text="No" />
@@ -66,7 +66,7 @@
       </property>
       <property xsi:type="standardProperty" id="radio_checkbox_size" name="Radio Checkbox size" type="string" mode="dynamic" require="true" visible="true">
         <description><![CDATA[Radio Checkbox size]]></description>
-        <value><![CDATA[1.6rem]]></value>
+        <value><![CDATA[1.5rem]]></value>
       </property>
     </category>
     <category id="buttons" name="Buttons">

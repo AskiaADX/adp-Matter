@@ -219,10 +219,7 @@ input[type=checkbox], input[type=radio] {
     display: none;
 }
 
-input[type=checkbox] + label.askia-radio,
 input[type=checkbox] + label.askia-checkbox {
-    width: 1em;
-    height: 1em;
     display: inline-block;
     font-family: inherit;
     vertical-align: middle;
@@ -241,8 +238,6 @@ input[type=checkbox] + label.askia-checkbox {
 }
 
 input[type=radio] + label.askia-radio, input[type=checkbox].askia-exclusive + label.askia-checkbox {
-    width: 1em;
-    height: 1em;
     display: inline-block;
     font-family: inherit;
     vertical-align: middle;
@@ -260,21 +255,17 @@ input[type=radio] + label.askia-radio, input[type=checkbox].askia-exclusive + la
     transition: transform .3s cubic-bezier(.2, .3, 0, 1), box-shadow .3s cubic-bezier(.2, .3, 0, 1), border-color 0s linear .17s;
 }
 
-input[type=checkbox]:focus + label.askia-radio,
 input[type=checkbox]:focus + label.askia-checkbox,
 input[type=radio]:focus + label.askia-radio {
     outline: none;
 }
 
-input[type=checkbox]:active + label.askia-radio,
 input[type=checkbox]:active + label.askia-checkbox,
 input[type=radio]:active + label.askia-radio {
     transform: scale(.8);
 }
 
-input[type=checkbox] + label.askia-radio:before,
 input[type=checkbox] + label.askia-checkbox:before,
-input[type=checkbox] + label.askia-radio:after,
 input[type=checkbox] + label.askia-checkbox:after,
 input[type=radio] + label.askia-radio:before,
 input[type=radio] + label.askia-radio:after {
@@ -288,19 +279,16 @@ input[type=radio] + label.askia-radio:after {
     transition: transform .3s cubic-bezier(.2, .3, 0, 1), opacity .3s cubic-bezier(.2, .3, 0, 1);
 }
 
-input[type=checkbox] + label.askia-radio:after,
 input[type=checkbox] + label.askia-checkbox:after,
 input[type=radio] + label.askia-radio:after {
     transform: translate(.8494em, .35em) rotate(135.22deg) scale(.5612, .1);
 }
 
-input[type=checkbox]:not(:checked) + label.askia-radio:before,
 input[type=checkbox]:not(:checked) + label.askia-checkbox:before,
 input[type=radio]:not(:checked) + label.askia-radio:before {
     transform: translate(.505em, .455em) rotate(44.91deg) scale(.1, .1);
 }
 
-input[type=checkbox]:not(:checked) + label.askia-radio:after,
 input[type=checkbox]:not(:checked) + label.askia-checkbox:after,
 input[type=radio]:not(:checked) + label.askia-radio:after {
     transform: translate(.575em, .525em) rotate(135.22deg) scale(.1, .1);
