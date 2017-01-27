@@ -24,6 +24,7 @@
       <content fileName="normalize.min.css" type="css" mode="static" position="head" />
       <content fileName="styles.css" type="css" mode="static" position="head" />
       <content fileName="styles.css" type="css" mode="dynamic" position="head" />
+      <content fileName="askia.ajax.js" type="javascript" mode="static" position="foot" />
     </output>
   </outputs>
   <properties>
