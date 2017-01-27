@@ -11,7 +11,9 @@
   window.CustomEvent = CustomEvent;
 })();
 (function () {
-
+    if (window.AskiaScript) {
+		AskiaScript.executeLiveRouting = function () {};
+	} 
     // Augment or create the public `askia` namespace
     var askia = window.askia || {};
     if (!window.askia) {
