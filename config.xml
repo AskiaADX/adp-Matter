@@ -22,9 +22,9 @@
       <content fileName="logo-askia-rvb.png" type="image" mode="static" position="none" />
       <content fileName="html5-ie.js" type="javascript" mode="static" position="head" />
       <content fileName="normalize.min.css" type="css" mode="static" position="head" />
-      <content fileName="styles.css" type="css" mode="static" position="head" />
+      <content fileName="styles.min.css" type="css" mode="static" position="head" />
       <content fileName="styles.css" type="css" mode="dynamic" position="head" />
-      <content fileName="askia.ajax.js" type="javascript" mode="static" position="foot" />
+      <content fileName="askia.ajax.min.js" type="javascript" mode="static" position="foot" />
     </output>
   </outputs>
   <properties>
