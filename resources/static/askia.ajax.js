@@ -304,12 +304,12 @@
     }
     
     document.addEventListener("DOMContentLoaded", function(){
-        document.addEventListener("click", function(event){
-            var el = event.target || event.srcElement;
-            if ((el.nodeName === "INPUT") && (el.type === "checkbox") && (el.className.indexOf("askia-exclusive") >= 0)) {
-                manageExclusive(el);
-            }
-        });
+        //document.addEventListener("click", function(event){
+        //    var el = event.target || event.srcElement;
+        //    if ((el.nodeName === "INPUT") && (el.type === "checkbox") && (el.className.indexOf("askia-exclusive") >= 0)) {
+        //        manageExclusive(el);
+        //    }
+        //});
         document.addEventListener("change", function(event){
             var el = event.target || event.srcElement;
             if (((el.nodeName === "INPUT") && 
