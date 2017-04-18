@@ -69,6 +69,10 @@
         <description><![CDATA[Radio Checkbox size]]></description>
         <value><![CDATA[1.5rem]]></value>
       </property>
+      <property xsi:type="standardProperty" id="ribbon_footer_background_color" name="Ribbon Footer background color" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgba">
+        <description><![CDATA[The background color of the ribbon and footer]]></description>
+        <value><![CDATA[{%= Theme.PrimaryColor %}]]></value>
+      </property>
     </category>
     <category id="buttons" name="Buttons">
       <property xsi:type="standardProperty" id="buttons_alignement" name="Buttons alignement" type="string" mode="dynamic" require="true" visible="true">
