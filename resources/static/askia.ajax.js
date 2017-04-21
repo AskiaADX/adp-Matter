@@ -313,6 +313,8 @@
         //        manageExclusive(el);
         //    }
         //});
+        
+        console.log("toto");
         document.addEventListener("change", function(event){
             var el = event.target || event.srcElement;
             if (((el.nodeName === "INPUT") && 
