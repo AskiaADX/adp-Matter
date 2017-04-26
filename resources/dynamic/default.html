@@ -10,17 +10,7 @@
         <!--- ASKIA HEAD HERE -->
         <askia-head />
     </head>
-    {% 
-    Dim liveRouting = ""
-    Dim liveRoutingIndex = 1
-    For liveRoutingIndex = 1 to CurrentQuestions.Count
-        If (CurrentQuestions[liveRoutingIndex].IsLiveRoutingSource) Then
-        liveRouting = "class=\"hasLiveRouting\""
-            Break
-    	EndIf
-    Next liveRoutingIndex
-	%}
-    <body {%:= liveRouting %}>
+    <body>
         <header id="nav" class="large">
             {%
             Dim attrDisabled = On(Interview.IsFirstPage, "disabled=\"disabled\"", "")
@@ -126,7 +116,7 @@
                         removeClass(nav,'fixed')
                     }
                 }
-
+                
                 window.onscroll = Matter;
                 document.addEventListener("click", function(event){
                     var el = event.target || event.srcElement;
