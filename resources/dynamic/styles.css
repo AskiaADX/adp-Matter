@@ -155,9 +155,11 @@ header.fixed .progressWrapper {
 .askia-grid-row td, .askia-grid-header td {
     border-bottom: {%= BorderWidth %} solid rgba({%= NeutralDarkColor.ToRGB() %},1.0);
 }
+{% If (Browser.Mobile = False) Then %}
 .askia-grid-row:hover td {
     background-color: rgba({%= BlackColor.ToRGB() %},.1);
 }
+{% EndIf %}
 
 .askia-grid-row .askia-question-label {
     font-size: {%= NormalFS %};
@@ -184,11 +186,14 @@ header.fixed .progressWrapper {
 .askia-response {
     font-size: {%= NormalFS %};
     padding: 5px;
+    cursor: pointer;
 }
+{% If (Browser.Mobile = False) Then %}
 .askia-response:hover {
     background-color : rgba({%= BlackColor.ToRGB() %}, .1);
     cursor: pointer;
 }
+{% EndIf %}
 .askia-grid-header .askia-response:hover {
     background-color : transparent; 
 }
