@@ -304,7 +304,7 @@ input[type=number] {
     min-width: 8em;
 	text-align: right;
 }
-input[type=text] {
+input[type=text][name^="S"] {
     width: 100%;
     min-width: 80%;
 	max-width: 90%;
