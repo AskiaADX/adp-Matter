@@ -26,11 +26,11 @@ Dim radio_checkbox_size = CurrentADP.Var("radio_checkbox_size")
 %}
 
 ::selection {
-    color: rgba({%= WhiteColor %});
+    color: rgba({%= NeutralLightColor %});
     background-color: rgba({%= PrimaryColor %});
 }
 ::-moz-selection {
-    color: rgba({%= WhiteColor %});
+    color: rgba({%= NeutralLightColor %});
     background-color: rgba({%= PrimaryColor %});
 }
 body, html {
@@ -110,7 +110,7 @@ header.fixed .progressWrapper {
 }
 
 .progress {
-    background-color: rgba({%= NeutralLightColor %});
+    background-color: rgba({%= BlackColor.ToRGB() %}, 0.1);
     border-radius: {%= BorderRadius %};
 }
 
