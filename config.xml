@@ -105,7 +105,7 @@
     <category id="footer" name="Footer">
       <property xsi:type="standardProperty" id="display_footer" name="Display footer" type="string" mode="dynamic" require="true" visible="true">
         <description><![CDATA[Display footer]]></description>
-        <value><![CDATA[no]]></value>
+        <value><![CDATA[yes]]></value>
         <options>
           <option value="yes" text="Yes" />
           <option value="no" text="No" />
