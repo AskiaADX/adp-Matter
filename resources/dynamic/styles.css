@@ -117,7 +117,7 @@ header.fixed .progressWrapper {
 .progress-bar {
     background-color: rgba({%= SecondaryColor %});
     border-radius: {%= BorderRadius %} 0 0 {%= BorderRadius %};
-    width: {%= Interview.Progress * (14/100) %}em;
+    width: {%= (Interview.Progress * (14/100)).Round() %}em;
 }
 .progress-value {
     font-size: {%= SmallFS %};
@@ -125,12 +125,12 @@ header.fixed .progressWrapper {
 
 @media screen and (min-width: 501px) and (max-width: 768px) {
   .progress-bar {
-    width: {%= Interview.Progress * (11/100) %}em;
+    width: {%= (Interview.Progress * (11/100)).Round() %}em;
   }
 }
 @media screen and (max-width: 500px) {
   .progress-bar {
-    width: {%= Interview.Progress * (6/100) %}em;
+    width: {%= (Interview.Progress * (6/100)).Round() %}em;
   }
 }
 .askiaquestions {  
