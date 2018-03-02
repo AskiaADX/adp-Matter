@@ -319,16 +319,16 @@ input[type=week]:hover {
 }
 .footerLeft {
     padding: 0 0 0 {%= HPadding %};
-    color: rgba({%= WhiteColor %});
+    color: rgba({%= NeutralLightColor %});
     font-size: {%= SmallFS %};
 }
 
 .footerRight {
     padding: 0 {%= HPadding %} 0 0;
-    color: rgba({%= WhiteColor %});
+    color: rgba({%= NeutralLightColor %});
     font-size: {%= SmallFS %};
 }
 footer a {
-    color: {%= WhiteColor.ToHexa() %};
+    color: {%= NeutralLightColor.ToHexa() %};
     transition: color linear .3s;
 }
