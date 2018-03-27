@@ -91,21 +91,22 @@ header.fixed {
 }
 
 header.fixed .progressWrapper {
-    padding: 1.65em {%= HPadding %} 0 0;
+    margin: auto {%= HPadding %} auto auto;
 }
 
 .progressWrapper {
-    padding: 2.5em {%= HPadding %} 2.5em 0;
+    margin: auto {%= HPadding %} auto auto;
+    
 }
 @media screen and (max-width: 500px) {
   .progressWrapper {
-    padding: 2.5em 0.5em 2.5em 0;
+      margin: auto 0.5em auto auto;
   }
 }
 
 @media screen and (max-width: 500px) {
   header.fixed .progressWrapper {
-    padding: 1.65em 0.5em 0 0;
+    margin: auto 0.5em auto auto;
   }
 }
 
