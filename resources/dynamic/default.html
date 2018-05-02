@@ -15,18 +15,18 @@
             {%
             Dim attrDisabled = On(Interview.IsFirstPage, "disabled=\"disabled\"", "")
             Dim classDisabled = On(Interview.IsFirstPage, "disabled", "")
-            Dim SurveyName = CurrentADP.Var("survey_name")
-            Dim SurveyLogoSrc = CurrentADP.Var("survey_logo_src")
-            Dim SurveyLogoAlt = CurrentADP.Var("survey_logo_alt")
+            Dim adpSurveyName = CurrentADP.Var("survey_name")
+            Dim adpSurveyLogoSrc = CurrentADP.Var("survey_logo_src")
+            Dim adpSurveyLogoAlt = CurrentADP.Var("survey_logo_alt")
             Dim errors_caption = CurrentADP.Var("errors_caption")
-            If (SurveyLogoSrc <> "") Then  %}
-            <div class="logo-survey"><img src="{%= SurveyLogoSrc %}" alt="{%= SurveyLogoAlt %}" /></div>
+            If (adpSurveyLogoSrc <> "") Then  %}
+            <div class="logo-survey"><img src="{%= adpSurveyLogoSrc %}" alt="{%= adpSurveyLogoAlt %}" /></div>
             {% End If %}
-            {% If (SurveyLogoSrc = "") and (SurveyName = "") Then  %}
+            {% If (adpSurveyLogoSrc = "") and (adpSurveyName = "") Then  %}
             <div class="logo-survey"><img src="{%:= CurrentADP.URLTo("static/logo-askia-rvb.png") %}" alt="Askia logo" /></div>
             {% End If %}
-            {% If (SurveyLogoSrc = "") and (SurveyName <> "") Then  %}
-            <h2>{%= SurveyName %}</h2>
+            {% If (adpSurveyLogoSrc = "") and (adpSurveyName <> "") Then  %}
+            <h2>{%= adpSurveyName %}</h2>
             {% End If %}
             <div class="progressWrapper">
                 <div class="progress">
