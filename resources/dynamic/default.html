@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>{%= CurrentADP.Var("window_title") %}</title>
-        <meta charset="utf-8" content="text/html" http-equiv="Content-Type">
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Askia - software for surveys">
         <meta name="theme-color" content="#DF4335">
         <link rel="icon" href="{%:= CurrentADP.URLTo("static/favicon.png") %}">
+        
         <!--- ASKIA HEAD HERE -->
+        {%:= CurrentADP.Var("headHTML") %}
         <askia-head />
     </head>
     <body>
@@ -44,15 +46,7 @@
                 <div class="askiaquestions">
                     {% If CurrentQuestions.Errors.Count Then %}
                     <div class="askia-errors-summary">
-                        {% If (errors_caption <> "") Then  %}
-                        <p>{%:= errors_caption %}</p>
-                        {% End If %}
-                        <ul>
-                            {% Dim errorIndex = 1
-							For errorIndex = 1 To CurrentQuestions.Errors.Count %}
-                            <li>{%= CurrentQuestions.Errors[errorIndex].Message %}</li>
-                            {% Next %}
-                        </ul>
+                        <!--insert errors here -->
                     </div>
                     {% End If %}
                     <!--- ASKIA QUESTIONS HERE -->
@@ -72,8 +66,37 @@
             <div class="footerRight">{%:= CurrentADP.Var("footer_right") %}</div>
         </footer>
         <!--- ASKIA FOOT HERE -->
+        {%:= CurrentADP.Var("footHTML") %}
         <askia-foot />
         <script>
+		var errorUL = "";
+
+		{% If (errors_caption <> "") Then  %}
+        	errorUL = "<p>{%:= errors_caption %}</p>";
+        {% End If %}
+         
+        errorUL = errorUL + "<ul>";
+
+    	{% Dim xerrorIndex = 1
+			For xerrorIndex = 1 To CurrentQuestions.Errors.Count
+    dim origError = CurrentQuestions.Errors[xerrorIndex].Message.ToString().Replace(crlf," ")
+		%}
+        var errorMsg = "{%= origError %}";
+        var strippedMsg = errorMsg.replace(/&lt;br\/&gt;/g, ' ');
+        strippedMsg = strippedMsg.replace(/&lt;[^&gt;]+&gt;/g, '');
+        strippedMsg = strippedMsg.replace(/<[^>]+>/g, '');
+		errorUL = errorUL + "<li>" + strippedMsg + "</li>";
+		{% Next %}
+		errorUL = errorUL+ "</ul>";
+            
+        if (document.getElementsByClassName('askia-errors-summary')[0])	document.getElementsByClassName('askia-errors-summary')[0].innerHTML=errorUL;
+          
+		</script>
+        <script>
+            
+            
+            
+            
             document.addEventListener("DOMContentLoaded", function(){
                 var fixed = false,
                     nav = document.getElementById('nav'),
@@ -116,7 +139,7 @@
                         removeClass(nav,'fixed')
                     }
                 }
-                
+
                 window.onscroll = Matter;
                 document.addEventListener("click", function(event){
                     var el = event.target || event.srcElement;

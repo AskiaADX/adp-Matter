@@ -7,9 +7,11 @@
   <info>
     <name>Matter</name>
     <guid>10926820-e66b-4e74-9ed0-ef116a75fc29</guid>
-    <version>1.0.7</version>
+    <version>1.0.9</version>
     <date>2016-12-06</date>
-    <description><![CDATA[adp Matter]]></description>
+    <description><![CDATA[adp Matter
+		v1.0.8 - Modified dynamic/style.css for HTML5 compatibility
+		v1.0.9 - Strip HTML from longcaptions in error messages]]></description>
     <company>askia</company>
     <author><![CDATA[Jerome Duparc <jeromed@askia.com> Paul McDuffee Nevin<paul@askia.com> Vincent Tellier<vincent@askia.com>]]></author>
     <site>https://www.askia.com/</site>
@@ -73,6 +75,14 @@
       <property xsi:type="standardProperty" id="ribbon_footer_background_color" name="Ribbon and footer background color" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgba">
         <description><![CDATA[The background color of the ribbon and footer]]></description>
         <value><![CDATA[{%= Theme.PrimaryColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="headHTML" name="Additional HTML for Head section" type="string" mode="dynamic" require="false" visible="true">
+        <description><![CDATA[Additional HTML for Head section]]></description>
+        <value></value>
+      </property>
+      <property xsi:type="standardProperty" id="footHTML" name="Additional HTML for Foot section" type="string" mode="dynamic" require="false" visible="true">
+        <description><![CDATA[Additional HTML for Foot section]]></description>
+        <value></value>
       </property>
     </category>
     <category id="buttons" name="Buttons">
