@@ -76,6 +76,11 @@ body {
 .ribbon, footer {
     background-color: rgba({%= PrimaryColor %});
 }
+{% If CurrentADP.Var("display_next") = "no" Then %}
+input[name="Next"] {
+    display: none;
+}
+{% EndIf %}
 {% If CurrentADP.Var("display_footer") = "no" Then %}
 footer {
     display: none;
