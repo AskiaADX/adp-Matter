@@ -7,12 +7,13 @@
   <info>
     <name>Matter</name>
     <guid>10926820-e66b-4e74-9ed0-ef116a75fc29</guid>
-    <version>1.0.10</version>
+    <version>2.0.0</version>
     <date>2016-12-06</date>
     <description><![CDATA[adp Matter
 		v1.0.8 - Modified dynamic/style.css for HTML5 compatibility. Added properties for additional HTML in Head and Foot sections
 		v1.0.9 - Strip HTML from longcaptions in error messages
-		v1.0.10 - Added display next property]]></description>
+		v1.0.10 - Added display next property
+		v2.0.0 - Added window.location.search]]></description>
     <company>askia</company>
     <author><![CDATA[Jerome Duparc <jeromed@askia.com> Paul McDuffee Nevin<paul@askia.com> Vincent Tellier<vincent@askia.com>]]></author>
     <site>https://www.askia.com/</site>
