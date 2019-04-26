@@ -172,6 +172,25 @@ header.fixed .progressWrapper {
     width: 45%;
 }
 
+/*.askia-radio, .askia-checkbox {
+  float: left !important;
+}*/
+
+.askia-radio, .askia-checkbox {
+   float: left;
+}
+
+.askia-grid-row > td >.askia-radio, .askia-grid-row > td > .askia-checkbox, .askiarow > td >.askia-radio, .askiarow > td > .askia-checkbox {
+  float: none;
+}
+
+.askia-radio + .askia-response-label, .askia-checkbox + .askia-response-label {
+    display: block;
+    margin-left: {%= CurrentADP.Var("radio_checkbox_size") %} !important;
+    padding-left: 10px;
+    vertical-align: text-top;
+}
+
 .instruction {
     color: rgba({%= NeutralDarkColor %});
     font-family: {%= FontFamily %};
