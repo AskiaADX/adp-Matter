@@ -172,10 +172,6 @@ header.fixed .progressWrapper {
     width: 45%;
 }
 
-/*.askia-radio, .askia-checkbox {
-  float: left !important;
-}*/
-
 .askia-radio, .askia-checkbox {
    float: left;
 }
