@@ -182,7 +182,7 @@ header.fixed .progressWrapper {
 
 .askia-radio + .askia-response-label, .askia-checkbox + .askia-response-label {
     display: block;
-    margin-left: {%= CurrentADP.Var("radio_checkbox_size") %} !important;
+    margin-left: {%= radio_checkbox_size %} !important;
     padding-left: 10px;
     vertical-align: text-top;
 }
