@@ -101,7 +101,7 @@ header.fixed .progressWrapper {
 
 .progressWrapper {
     margin: auto {%= HPadding %} auto auto;
-    
+
 }
 @media screen and (max-width: 500px) {
   .progressWrapper {
@@ -139,7 +139,7 @@ header.fixed .progressWrapper {
     width: {%= (Interview.Progress * (6/100)).ToString().Replace(",",".") %}em;
   }
 }
-.askiaquestions {  
+.askiaquestions {
     border-radius: {%= BorderRadius %};
     padding: {%= VPadding %} {%= HPadding %};
     margin: 0 auto 5em auto;
@@ -219,7 +219,7 @@ header.fixed .progressWrapper {
 }
 {% EndIf %}
 .askia-grid-header .askia-response:hover {
-    background-color : transparent; 
+    background-color : transparent;
 }
 .btn {
     font-family: {%= FontFamily %};
