@@ -124,9 +124,24 @@
         strippedMsg = strippedMsg.replace(/<[^>]+>/g, '');
 		errorUL = errorUL + "<li>" + strippedMsg + "</li>";
 		{% Next %}
+
+    var emElems = document.querySelectorAll('[data-email-err]');
+
+    for (var i = 0; i < emElems.length; i++) {
+      var test = checkEmailRegex(emElems[i]);
+      errorUL = (!test) ? (errorUL + "<li>"+ emElems[i].getAttribute('data-email-err') +"</li>") : errorUL;
+    }
+
 		errorUL = errorUL+ "</ul>";
 
-        if (document.getElementsByClassName('askia-errors-summary')[0])	document.getElementsByClassName('askia-errors-summary')[0].innerHTML=errorUL;
+    if (document.getElementsByClassName('askia-errors-summary')[0])	document.getElementsByClassName('askia-errors-summary')[0].innerHTML=errorUL;
+
+    // check RegExp on email
+    function checkEmailRegex(elem){
+      var emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      var test = elem.value.length === 0 || emailRegExp.test(elem.value);
+      return test;
+    }
 
 		</script>
         <script>
