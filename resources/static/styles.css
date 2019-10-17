@@ -394,13 +394,15 @@ textarea {
 .btn {
   cursor: pointer;
   position: relative;
-  width: 5.5em;
+  max-width: 11em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   border: none;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
   margin: .4em;
-  overflow: hidden;
   -webkit-appearance: none;
   transition: all .3s cubic-bezier(.25, .1, .25, .1);
 }

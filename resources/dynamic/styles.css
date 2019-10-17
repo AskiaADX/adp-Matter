@@ -226,7 +226,7 @@ header.fixed .progressWrapper {
     font-family: {%= FontFamily %};
     font-size: {%= NormalFS %};
     border-radius: {%= BorderRadius %};
-    padding: {%= VPadding %} 0;
+    padding: {%= VPadding %};
     box-shadow: 0 2px 5px rgba({%= BlackColor.ToRGB() %}, 0.3);
 }
 .btn:after {
