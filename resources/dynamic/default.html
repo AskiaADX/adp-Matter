@@ -7,7 +7,7 @@
         <meta name="description" content="Askia - software for surveys">
         <meta name="theme-color" content="#DF4335">
         <link rel="icon" href="{%:= CurrentADP.URLTo("static/favicon.png") %}">
-        
+
         <!--- ASKIA HEAD HERE -->
         {%:= CurrentADP.Var("headHTML") %}
         <askia-head />
@@ -15,6 +15,7 @@
     <body>
         <header id="nav" class="large">
             {%
+            Dim qid = CurrentQuestion.id
             Dim attrDisabled = On(Interview.IsFirstPage, "disabled=\"disabled\"", "")
             Dim classDisabled = On(Interview.IsFirstPage, "disabled", "")
             Dim adpSurveyName = CurrentADP.Var("survey_name")
@@ -58,6 +59,24 @@
                         <input type="submit" name="Next" class="btn primary keyframe" value="{%= CurrentADP.Var("next_caption") %}" />
                     </div>
                 </div>
+
+              {%
+                Dim closeType = CurrentADP.Var("modal_close_type")
+                Dim duration = CurrentADP.Var("duration")
+                Dim numOfAttempts = CurrentADP.Var("num_of_attempts")
+                Dim showModal = CurrentADP.Var("show_modal")
+                Dim modalContent = CurrentADP.Var("modal_content")
+              %}
+
+              <div id="modalOnSubmit" class="modal">
+                <div class="modal-content">
+                    <div class="modal-loading" align="middle">
+                          <div class="loader-main">{%:= modalContent %}</div>
+                          <div class="close-div"><input type="submit" name="Close" id="closeButton" class="close_button" value="Close"></div>
+                    </div>
+                </div>
+              </div>
+
             </askia-form>
             <!--- ASKIA FORM ENDS HERE -->
         </div>
@@ -69,12 +88,30 @@
         {%:= CurrentADP.Var("footHTML") %}
         <askia-foot />
         <script>
+
+        function modalShow(duration,type){
+          var modal = document.getElementById('modalOnSubmit');
+          modal.style.display = "block";
+          // AutoSubmit(10,"s");
+          if(type == 2){
+            var cl_button = document.getElementById("closeButton");
+            cl_button.style.display = "none";
+
+            setTimeout(function(){
+              cl_button.click();
+              modal.style.display = "none";
+            }, duration * 1000);
+          }
+
+        }
+
+
 		var errorUL = "";
 
 		{% If (errors_caption <> "") Then  %}
         	errorUL = "<p>{%:= errors_caption %}</p>";
         {% End If %}
-         
+
         errorUL = errorUL + "<ul>";
 
     	{% Dim xerrorIndex = 1
@@ -87,16 +124,31 @@
         strippedMsg = strippedMsg.replace(/<[^>]+>/g, '');
 		errorUL = errorUL + "<li>" + strippedMsg + "</li>";
 		{% Next %}
+
+    var emElems = document.querySelectorAll('[data-email-err]');
+
+    for (var i = 0; i < emElems.length; i++) {
+      var test = checkEmailRegex(emElems[i]);
+      errorUL = (!test) ? (errorUL + "<li>"+ emElems[i].getAttribute('data-email-err') +"</li>") : errorUL;
+    }
+
 		errorUL = errorUL+ "</ul>";
-            
-        if (document.getElementsByClassName('askia-errors-summary')[0])	document.getElementsByClassName('askia-errors-summary')[0].innerHTML=errorUL;
-          
+
+    if (document.getElementsByClassName('askia-errors-summary')[0])	document.getElementsByClassName('askia-errors-summary')[0].innerHTML=errorUL;
+
+    // check RegExp on email
+    function checkEmailRegex(elem){
+      var emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      var test = elem.value.length === 0 || emailRegExp.test(elem.value);
+      return test;
+    }
+
 		</script>
         <script>
-            
-            
-            
-            
+
+
+
+
             document.addEventListener("DOMContentLoaded", function(){
                 var fixed = false,
                     nav = document.getElementById('nav'),
@@ -143,6 +195,16 @@
                 window.onscroll = Matter;
                 document.addEventListener("click", function(event){
                     var el = event.target || event.srcElement;
+                    {% If showModal = "yes" Then %}
+                      {% If (numOfAttempts = 0 OR (numOfAttempts = 1 AND qid = 1)) Then %}
+                        if(el.type == "submit" && el.name == "Next"){
+                          event.stopPropagation();
+                          event.preventDefault();
+                          modalShow('{%= duration %}','{%= closeType %}');
+                        }
+                      {% EndIf %}
+                    {% EndIf %}
+
                     if ((el.nodeName === "TD" || el.nodeName === "LI" ) && el.className.indexOf("askia-response") >= 0 && el.className.indexOf("askia-response-label") < 0) {
 						document.getElementById(el.lastElementChild.attributes.for.value).click();
                     }

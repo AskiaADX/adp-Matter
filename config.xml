@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<page  xmlns="http://www.askia.com/2.1.0/ADPSchema"
+<page  xmlns="http://www.askia.com/2.2.0/ADPSchema"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://www.askia.com/2.1.0/ADPSchema https://raw.githubusercontent.com/AskiaADX/ADXSchema/2.1.0/ADPSchema.xsd"
-          version="2.1.0"
-          askiaCompat="5.4.2">
+          xsi:schemaLocation="http://www.askia.com/2.2.0/ADPSchema https://raw.githubusercontent.com/AskiaADX/ADXSchema/2.2.0/ADPSchema.xsd"
+          version="2.2.0"
+          askiaCompat="5.5.2">
   <info>
     <name>Matter</name>
     <guid>10926820-e66b-4e74-9ed0-ef116a75fc29</guid>
-    <version>2.0.1</version>
+    <version>3.0.0</version>
     <date>2016-12-06</date>
     <description><![CDATA[adp Matter
 		v1.0.8 - Modified dynamic/style.css for HTML5 compatibility. Added properties for additional HTML in Head and Foot sections
 		v1.0.9 - Strip HTML from longcaptions in error messages
 		v1.0.10 - Added display next property
 		v2.0.0 - Added window.location.search
-		v2.0.1 - Added indentation for long labels]]></description>
+		v2.0.1 - Added indentation for long labels
+    v2.0.2 - Customizable modal on submit
+    v2.0.3 - Custom error message for email inputs
+    v3.0.0 - ADPSchema 2.2.0]]></description>
     <company>askia</company>
     <author><![CDATA[Jerome Duparc <jeromed@askia.com> Paul McDuffee Nevin<paul@askia.com> Vincent Tellier<vincent@askia.com>]]></author>
     <site>https://www.askia.com/</site>
@@ -139,6 +142,48 @@
       <property xsi:type="standardProperty" id="footer_right" name="Footer right" type="string" mode="dynamic" require="false" visible="true">
         <description><![CDATA[Footer right]]></description>
         <value></value>
+      </property>
+    </category>
+    <category id="modal" name="Modal">
+      <property xsi:type="standardProperty" id="show_modal" name="Show modal" type="string" mode="dynamic" require="true" visible="true">
+        <description><![CDATA[Show modal on next button click]]></description>
+        <value><![CDATA[no]]></value>
+        <options>
+          <option value="yes" text="Yes" />
+          <option value="no" text="No" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="modal_content" name="Modal content" type="string" mode="dynamic" require="false" visible="true">
+        <description><![CDATA[Modal content]]></description>
+        <value><![CDATA[<p>Modal content goes here..</p>]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="modal_close_type" name="Modal close type" type="number" mode="static" require="true" visible="true" min="1" max="2">
+        <description><![CDATA[Select If modal close when clicked or Timed]]></description>
+        <value><![CDATA[1]]></value>
+        <options>
+          <option value="1" text="Clicked" />
+          <option value="2" text="Timed" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="duration" name="Duration(s)" type="number" mode="static" require="true" visible="true" min="1" decimal="0">
+        <description><![CDATA[Duration by seconds]]></description>
+        <value><![CDATA[1]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="num_of_attempts" name="Number of attempts" type="number" mode="static" require="true" visible="true" min="1" max="3">
+        <description><![CDATA[Define how many attempts/questions that does modal appear.]]></description>
+        <value><![CDATA[0]]></value>
+        <options>
+          <option value="0" text="Any" />
+          <option value="1" text="First attempt only" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="modal_width" name="Modal width" type="string" mode="dynamic" require="true" visible="true">
+        <description><![CDATA[Modal width]]></description>
+        <value><![CDATA[300px]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="modal_height" name="Modal height" type="string" mode="dynamic" require="true" visible="true">
+        <description><![CDATA[Modal height]]></description>
+        <value><![CDATA[100px]]></value>
       </property>
     </category>
   </properties>

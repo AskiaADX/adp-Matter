@@ -23,6 +23,11 @@ Dim HPadding = Theme.HPadding
 Dim LineHeight = Theme.LineHeight
 Dim buttons_alignement = CurrentADP.Var("buttons_alignement")
 Dim radio_checkbox_size = CurrentADP.Var("radio_checkbox_size")
+
+Dim modalWidth = CurrentADP.Var("modal_width")
+Dim modalHeight = CurrentADP.Var("modal_height")
+Dim closeType = CurrentADP.Var("modal_close_type")
+
 %}
 
 ::selection {
@@ -101,7 +106,7 @@ header.fixed .progressWrapper {
 
 .progressWrapper {
     margin: auto {%= HPadding %} auto auto;
-    
+
 }
 @media screen and (max-width: 500px) {
   .progressWrapper {
@@ -139,7 +144,7 @@ header.fixed .progressWrapper {
     width: {%= (Interview.Progress * (6/100)).ToString().Replace(",",".") %}em;
   }
 }
-.askiaquestions {  
+.askiaquestions {
     border-radius: {%= BorderRadius %};
     padding: {%= VPadding %} {%= HPadding %};
     margin: 0 auto 5em auto;
@@ -215,13 +220,13 @@ header.fixed .progressWrapper {
 }
 {% EndIf %}
 .askia-grid-header .askia-response:hover {
-    background-color : transparent; 
+    background-color : transparent;
 }
 .btn {
     font-family: {%= FontFamily %};
     font-size: {%= NormalFS %};
     border-radius: {%= BorderRadius %};
-    padding: {%= VPadding %} 0;
+    padding: {%= VPadding %};
     box-shadow: 0 2px 5px rgba({%= BlackColor.ToRGB() %}, 0.3);
 }
 .btn:after {
@@ -351,4 +356,117 @@ input[type=week]:hover {
 footer a {
     color: {%= NeutralLightColor.ToHexa() %};
     transition: color linear .3s;
+}
+
+.loader-main {
+  margin-top: 10px;
+  width: calc({%= modalWidth %} - 20px);
+  {% If closeType = 1 Then %}
+    height: calc({%= modalHeight %} - 40px);
+  {% Else %}
+    height: 100%;
+  {% EndIf %}
+}
+
+@keyframes spin-cycle {
+  from {
+    fill: #DF4335;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  to {
+    fill: rgba(255, 255, 255, 0);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 10%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Modal Content */
+.modal-content {
+    width: {%= modalWidth %};
+    height: {%= modalHeight %};
+    position: relative;
+    background-color: #fefefe;
+    font-weight: bold;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Modal loding */
+.modal-loading {
+  width: 100%;
+  height: {%= modalHeight %};
+  position: relative;
+  background-color: #fefefe;
+  font-weight: bold;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+{% If closeType = 1 Then %}
+.close-div{
+  height: 31px;
+  width: 100%;
+  background-color: rgba({%= SecondaryColor %});
+  transition: all .3s cubic-bezier(0.25, 0.1, 0.25, 0.1);
+
+}
+.close-div:hover{
+  background-color: rgba({%= SecondaryDarkColor %});
+  transition: all .3s cubic-bezier(0.25, 0.1, 0.25, 0.1);
+}
+{% EndIf %}
+
+.close_button{
+  transition: all .3s cubic-bezier(0.25, 0.1, 0.25, 0.1);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  margin-top: 5px;
+  color:white;
+  font-size: {%= NormalFS %}
 }
