@@ -358,7 +358,6 @@ footer a {
     transition: color linear .3s;
 }
 
-
 .loader-main {
   margin-top: 10px;
   width: calc({%= modalWidth %} - 20px);
