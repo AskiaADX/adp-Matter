@@ -7,7 +7,7 @@
   <info>
     <name>Matter</name>
     <guid>10926820-e66b-4e74-9ed0-ef116a75fc29</guid>
-    <version>3.0.0</version>
+    <version>3.0.2</version>
     <date>2016-12-06</date>
     <description><![CDATA[adp Matter
 		v1.0.8 - Modified dynamic/style.css for HTML5 compatibility. Added properties for additional HTML in Head and Foot sections
@@ -28,6 +28,7 @@
       <description><![CDATA[Default output]]></description>
       <content fileName="favicon.png" type="image" mode="static" position="none" />
       <content fileName="logo-askia-rvb.png" type="image" mode="static" position="none" />
+      <content fileName="logo-askia.svg" type="image" mode="static" position="none" />
       <content fileName="askia.live.routing.js" type="javascript" mode="dynamic" position="head" />
       <content fileName="html5-ie.js" type="javascript" mode="static" position="head" />
       <content fileName="normalize.min.css" type="css" mode="static" position="head" />
