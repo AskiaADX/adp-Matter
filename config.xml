@@ -7,7 +7,7 @@
   <info>
     <name>Matter</name>
     <guid>10926820-e66b-4e74-9ed0-ef116a75fc29</guid>
-    <version>3.0.4</version>
+    <version>3.0.5</version>
     <date>2016-12-06</date>
     <description><![CDATA[adp Matter
 		v1.0.8 - Modified dynamic/style.css for HTML5 compatibility. Added properties for additional HTML in Head and Foot sections
@@ -40,6 +40,8 @@
       <content fileName="styles.min.css" type="css" mode="static" position="head" />
       <content fileName="styles.css" type="css" mode="dynamic" position="head" />
       <content fileName="askia.ajax.min.js" type="javascript" mode="static" position="foot" />
+      <content fileName="WebSimulator.js" type="javascript" mode="static" position="foot" />
+      <content fileName="Initializer.js" type="javascript" mode="dynamic" position="foot" />
     </output>
   </outputs>
   <properties>
@@ -95,6 +97,14 @@
       <property xsi:type="standardProperty" id="footHTML" name="Additional HTML for Foot section" type="string" mode="dynamic" require="false" visible="true">
         <description><![CDATA[Additional HTML for Foot section]]></description>
         <value></value>
+      </property>
+      <property xsi:type="standardProperty" id="websimulator" name="Activate web simulator" type="string" mode="dynamic" require="true" visible="true">
+        <description><![CDATA[Activate web simulator]]></description>
+        <value><![CDATA[no]]></value>
+        <options>
+          <option value="yes" text="Yes" />
+          <option value="no" text="No" />
+        </options>
       </property>
     </category>
     <category id="buttons" name="Buttons">
