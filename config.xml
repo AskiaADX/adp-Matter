@@ -21,7 +21,8 @@
     v3.0.1 -
     v3.0.2 -
     v3.0.3 - Check if window.isDesignPreview object does exist
-	v3.0.4 - Fixed live routing call at load
+	  v3.0.4 - Fixed live routing call at load
+    v3.0.5 - change html.lang attribute
     ]]></description>
     <company>askia</company>
     <author><![CDATA[Jerome Duparc <jeromed@askia.com> Paul McDuffee Nevin<paul@askia.com> Vincent Tellier<vincent@askia.com>]]></author>
