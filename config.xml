@@ -7,7 +7,7 @@
   <info>
     <name>Matter</name>
     <guid>10926820-e66b-4e74-9ed0-ef116a75fc29</guid>
-    <version>3.0.2</version>
+    <version>3.0.4</version>
     <date>2016-12-06</date>
     <description><![CDATA[adp Matter
 		v1.0.8 - Modified dynamic/style.css for HTML5 compatibility. Added properties for additional HTML in Head and Foot sections
@@ -17,7 +17,13 @@
 		v2.0.1 - Added indentation for long labels
     v2.0.2 - Customizable modal on submit
     v2.0.3 - Custom error message for email inputs
-    v3.0.0 - ADPSchema 2.2.0]]></description>
+    v3.0.0 - ADPSchema 2.2.0
+    v3.0.1 -
+    v3.0.2 -
+    v3.0.3 - Check if window.isDesignPreview object does exist
+	  v3.0.4 - Fixed live routing call at load
+    v3.0.5 - change html.lang attribute
+    ]]></description>
     <company>askia</company>
     <author><![CDATA[Jerome Duparc <jeromed@askia.com> Paul McDuffee Nevin<paul@askia.com> Vincent Tellier<vincent@askia.com>]]></author>
     <site>https://www.askia.com/</site>
