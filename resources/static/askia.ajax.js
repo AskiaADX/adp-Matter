@@ -164,8 +164,8 @@
     askiaAnswer: executeLiveRouting,
     askiaShowQuestion: executeShowHideQuestion,
     askiaHideQuestion: executeShowHideQuestion,
-    askiaShowResponses: executeShowHideResponses,
-    askiaHideResponses: executeShowHideResponses,
+    askiaShowResponses: null,
+    askiaHideResponses: null,
     askiaReload: executeReload,
     askiaSetValue: null,
     askiaShowMessage: null,
@@ -187,10 +187,6 @@
     var event = new CustomEvent(eventName, eventInit);
     return document.dispatchEvent(event);
   };
-
-  askia.hideResponses = function hideResponses(){
-    askia.defaultEventActions.askiaHideResponses();
-  }
 
   /**
    * Trigger an event when the respondent is answering
