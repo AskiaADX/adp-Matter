@@ -54,14 +54,15 @@
         </header>
         <div class="ribbon"></div>
         <div class="main">
+
             <!--- ASKIA FORM BEGINS HERE -->
             <askia-form>
                 <div class="askiaquestions">
-                    {% If CurrentQuestions.Errors.Count Then %}
+                    {% If (CurrentQuestions.Errors.Count) Then %}
                     <div class="askia-errors-summary">
                         <!--insert errors here -->
                     </div>
-                    {% End If %}
+                    {% EndIf %}
                     <!--- ASKIA QUESTIONS HERE -->
                     <askia-questions />
                     <div class="navigation">
@@ -198,7 +199,7 @@
                         if (scrollY > position && !fixed && !nav.className.match(new RegExp('(\\s|^)'+'fixed'+'(\\s|$)'))) {
                         fixed = true;
                         addClass(nav,'fixed')
-                    } else if (scrollY <= position && fixed && !!nav.className.match(new RegExp('(\\s|^)'+'fixed'+'(\\s|$)'))) {
+                    } else if (scrollY <= position && fixed && !nav.className.match(new RegExp('(\\s|^)'+'fixed'+'(\\s|$)'))) {
                         fixed = false;
                         removeClass(nav,'fixed')
                     }
