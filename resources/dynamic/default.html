@@ -199,7 +199,7 @@
                         if (scrollY > position && !fixed && !nav.className.match(new RegExp('(\\s|^)'+'fixed'+'(\\s|$)'))) {
                         fixed = true;
                         addClass(nav,'fixed')
-                    } else if (scrollY <= position && fixed && !nav.className.match(new RegExp('(\\s|^)'+'fixed'+'(\\s|$)'))) {
+                    } else if (scrollY <= position && fixed && !(!nav.className.match(new RegExp('(\\s|^)'+'fixed'+'(\\s|$)'))) ) {
                         fixed = false;
                         removeClass(nav,'fixed')
                     }
