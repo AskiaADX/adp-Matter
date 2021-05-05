@@ -14,7 +14,7 @@
   //if (!window.arrLiveRoutingInputCode ||  window.arrLiveRoutingInputCode.length <= 0 ) {
   //  	return;
   //}
-  if (window.AskiaScript & !window.isDesignPreview) {
+  if (window.AskiaScript) {
     AskiaScript.executeLiveRouting = function () {};
   }
   // Augment or create the public `askia` namespace
@@ -332,7 +332,7 @@
                    el.parentElement.className.indexOf('askia-grid-row') >= 0 ||
                    el.parentElement.parentElement.className.indexOf('askia-grid-row') >= 0)  &&
                   (el.type === 'radio' || el.type === 'checkbox')) || el.nodeName === 'SELECT')) {
-          askia.triggerAnswer();
+          setTimeout(function(){ askia.triggerAnswer(); }, 150);
       }
     });
     /**
@@ -359,10 +359,7 @@
         askia.triggerAnswer();
       }
     });
-    if (window.arrLiveRoutingShortcut && window.arrLiveRoutingShortcut.length >= 1) {
-        askia.triggerAnswer();
-    }
-
+    askia.triggerAnswer();
   });
 
 }());
