@@ -7,8 +7,8 @@
   <info>
     <name>Matter</name>
     <guid>10926820-e66b-4e74-9ed0-ef116a75fc29</guid>
-    <version>3.1.1</version>
-    <date>2021-05-03</date>
+    <version>3.1.2</version>
+    <date>2021-06-09</date>
     <description><![CDATA[adp Matter
 		v1.0.8 - Modified dynamic/style.css for HTML5 compatibility. Added properties for additional HTML in Head and Foot sections
 		v1.0.9 - Strip HTML from longcaptions in error messages
@@ -24,7 +24,8 @@
 	  v3.0.4 - Fixed live routing call at load
     v3.0.5 - change html.lang attribute
     v3.1.0 - show/hide responses live-routing
-    v3.1.1 - 
+    v3.1.1 -
+    v3.1.2 - tabIndex management
     ]]></description>
     <company>askia</company>
     <author><![CDATA[Jerome Duparc <jeromed@askia.com> Paul McDuffee Nevin<paul@askia.com> Vincent Tellier<vincent@askia.com>]]></author>
