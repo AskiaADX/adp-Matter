@@ -58,10 +58,10 @@ input, textarea, keygen, select, button {
     font-family: {%= FontFamily %};
 }
 svg .logotext {
-    fill: rgba({%= PrimaryColor %});   
+    fill: rgba({%= PrimaryColor %});
 }
 svg .logobar {
-    fill: rgba({%= SecondaryColor %});   
+    fill: rgba({%= SecondaryColor %});
 }
 header h2 {
     font-family: {%= FontFamily %};
@@ -220,10 +220,11 @@ header.fixed .progressWrapper {
     cursor: pointer;
 }
 {% If (Browser.Mobile = False) Then %}
-.askia-response:hover {
+.askia-response:hover, .askia-response:focus {
     background-color : rgba({%= BlackColor.ToRGB() %}, .1);
     cursor: pointer;
 }
+
 {% EndIf %}
 .askia-grid-header .askia-response:hover {
     background-color : transparent;
