@@ -167,7 +167,7 @@
     askiaShowResponses: null,
     askiaHideResponses: null,
     askiaReload: executeReload,
-    askiaSetValue: null,
+    askiaSetValue: executeSetValue,
     askiaShowMessage: null,
     askiaChangeQuestionsOrder: null,
     askiaChangeResponsesOrder: null,
@@ -251,6 +251,28 @@
   function executeReload () {
     if (isPreventReload) return;
     window.location.reload();
+  }
+
+  /**
+   * Set value Ajax
+   */
+  function executeSetValue (data) {
+    let val = data.value;
+    if (Array.isArray(val)){
+      for (var i = 0; i < val.length; i++) {
+        let checkEl = document.querySelector('#askia-input' + data.question.inputCode + '_' + val[i].inputCode);
+        if (checkEl)
+          checkEl.checked = true;
+      }
+    } else {
+      if (typeof val === 'string'){
+        let openEl = document.querySelector('input[name="S'+ data.question.inputCode +'"]');
+        if (openEl) openEl.value = '', openEl.value = val;
+      } else {
+        let numberEl = document.querySelector('input[name="C'+ data.question.inputCode +'"]');
+        if (numberEl) numberEl.value = val;
+      }
+    }
   }
 
   /* ---======== Live Routing Management ========--- */
