@@ -220,11 +220,14 @@ header.fixed .progressWrapper {
     cursor: pointer;
 }
 {% If (Browser.Mobile = False) Then %}
-.askia-response:hover, .askia-response:focus {
+.askia-response:hover {
     background-color : rgba({%= BlackColor.ToRGB() %}, .1);
     cursor: pointer;
 }
-
+.askia-response:focus {
+  background-color : rgba({%= PrimaryColor.ToRGB() %}, .2) !important;
+  cursor: pointer;
+}
 {% EndIf %}
 .askia-grid-header .askia-response:hover {
     background-color : transparent;
